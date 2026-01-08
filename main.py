@@ -1,24 +1,21 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Autoriser Cloudflare Pages
+# Autoriser Cloudflare Pages (et tests locaux)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # plus tard on restreindra
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 @app.get("/")
-def health():
+def root():
     return {"status": "ok"}
 
-@app.post("/api/init")
-async def init(request: Request):
-    data = await request.json()
-    return {
-        "message": "Mini App connectée à Python",
-        "data": data
-    }
+@app.get("/api/ping")
+def ping():
+    return {"message": "pong"}
