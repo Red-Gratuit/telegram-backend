@@ -10,53 +10,39 @@
 
 <body>
 
-<div id="app">
+<audio id="bgMusic" src="/static/music.mp3" loop></audio>
 
-  <!-- Music -->
-  <audio id="bgMusic" src="/static/music.mp3" loop></audio>
+<div id="intro" class="screen active">
+  <h1 class="title">Le Professeur 59-62</h1>
+  <button id="enterBtn">Choisir sa puff</button>
+</div>
 
-  <!-- INTRO -->
-  <div id="intro" class="screen active">
-    <img src="/static/logo.png" class="logo">
-    <button id="enterBtn">Choisir sa puff</button>
+<div id="main" class="screen">
+
+  <div class="categories">
+    <button class="cat active" data-page="puffs">💨 PUFFS</button>
+    <button class="cat" data-page="stup">🌿 STUP</button>
+    <button class="cat" data-page="tabac">🚬 TABAC</button>
   </div>
 
-  <!-- MAIN APP -->
-  <div id="main" class="screen">
-
-    <div class="top">
-      <img src="/static/logo.png" class="logo-small">
+  <div id="puffs" class="page active">
+    <div class="grid">
+      <img src="/static/puff1.jpg">
+      <img src="/static/puff2.jpg">
+      <img src="/static/puff3.jpg">
+      <img src="/static/puff4.jpg">
+      <img src="/static/puff5.jpg">
     </div>
+  </div>
 
-    <div class="categories">
-      <button class="cat active" data-page="puffs">💨 PUFFS</button>
-      <button class="cat" data-page="stup">🌿 STUP</button>
-      <button class="cat" data-page="tabac">🚬 TABAC</button>
-    </div>
+  <div id="stup" class="page">
+    <h2>🌿 STUP</h2>
+    <p>Bientôt disponible</p>
+  </div>
 
-    <!-- PUFFS -->
-    <div id="puffs" class="page active">
-      <div class="grid">
-        <img src="/static/puff1.jpg">
-        <img src="/static/puff2.jpg">
-        <img src="/static/puff3.jpg">
-        <img src="/static/puff4.jpg">
-        <img src="/static/puff5.jpg">
-      </div>
-    </div>
-
-    <!-- STUP -->
-    <div id="stup" class="page">
-      <h2>🌿 STUP</h2>
-      <p>Bientôt disponible</p>
-    </div>
-
-    <!-- TABAC -->
-    <div id="tabac" class="page">
-      <h2>🚬 TABAC</h2>
-      <p>Bientôt disponible</p>
-    </div>
-
+  <div id="tabac" class="page">
+    <h2>🚬 TABAC</h2>
+    <p>Bientôt disponible</p>
   </div>
 
 </div>
