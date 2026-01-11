@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Le Professeur 59-62</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div id="app">
+
+  <!-- Music -->
+  <audio id="bgMusic" src="/static/music.mp3" loop></audio>
+
+  <!-- INTRO -->
+  <div id="intro" class="screen active">
+    <img src="/static/logo.png" class="logo">
+    <button id="enterBtn">Choisir sa puff</button>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="main" class="screen">
+
+    <div class="top">
+      <img src="/static/logo.png" class="logo-small">
+    </div>
+
+    <div class="categories">
+      <button class="cat active" data-page="puffs">💨 PUFFS</button>
+      <button class="cat" data-page="stup">🌿 STUP</button>
+      <button class="cat" data-page="tabac">🚬 TABAC</button>
+    </div>
+
+    <!-- PUFFS -->
+    <div id="puffs" class="page active">
+      <div class="grid">
+        <img src="/static/puff1.jpg">
+        <img src="/static/puff2.jpg">
+        <img src="/static/puff3.jpg">
+        <img src="/static/puff4.jpg">
+        <img src="/static/puff5.jpg">
+      </div>
+    </div>
+
+    <!-- STUP -->
+    <div id="stup" class="page">
+      <h2>🌿 STUP</h2>
+      <p>Bientôt disponible</p>
+    </div>
+
+    <!-- TABAC -->
+    <div id="tabac" class="page">
+      <h2>🚬 TABAC</h2>
+      <p>Bientôt disponible</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>

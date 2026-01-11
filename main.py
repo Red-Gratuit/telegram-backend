@@ -1,21 +1,13 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 app = FastAPI()
 
-# Autoriser Cloudflare Pages (et tests locaux)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # plus tard on restreindra
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Servir les fichiers statiques
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
+# Page principale
 @app.get("/")
-def root():
-    return {"status": "ok"}
-
-@app.get("/api/ping")
-def ping():
-    return {"message": "pong"}
+async def root():
+    return FileResponse("static/index.html")
